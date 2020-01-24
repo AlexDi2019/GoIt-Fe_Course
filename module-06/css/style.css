@@ -13,6 +13,8 @@ body {
     line-height: unset;
     font-family: 'Roboto', 'Montserrat', 'Kaushan Script', sans-serif;
     color: #999999;
+    margin: 0px;
+    padding: 0px;
 }
 
 img {
@@ -27,59 +29,86 @@ img {
 }
 
 
-/* * {
-    outline: 1px solid red;
-} */
-
-
 /* header */
 
 .main-header {
-    margin-bottom: 128px;
+    margin-bottom: 114px;
 }
 
 .main-navigation {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    height: 50px;
-    /* padding-bottom: 14px; */
+    min-height: 64px;
+}
+
+.site-logo {
+    margin-bottom: 12px;
 }
 
 .navigation-items {
     display: flex;
-    justify-content: space-between;
-    width: 490px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
     margin: 0px;
     padding: 0px;
     list-style: none;
     text-transform: uppercase;
 }
 
-.navigation-item {}
+.navigation-item {
+    cursor: pointer;
+    position: relative;
+}
+
+.navigation-item:not(:nth-of-type(5n)) {
+    margin-right: 58px;
+}
 
 .nav-link {
+    display: block;
     text-decoration: none;
     font-size: 14px;
     line-height: 1.2;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     color: #95e1d3;
+    text-align: center;
+    padding-bottom: 9px;
 }
 
-.nav-link:after {
-    /* opacity: 0; */
-    display: block;
+.nav-link::after {
+    position: absolute;
     content: '';
-    width: auto;
+    width: 0;
     height: 3px;
-    background-color: #f38181;
-    margin: 9px auto 0px;
+    background: #f38181;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.2s linear;
 }
 
-.navigation-item:hover .nav-link {
+.nav-link:hover::after,
+.nav-link:focus::after {
+    width: 100%;
+    left: 0;
+    transition: all 0.2s linear;
+}
+
+.nav-link:hover,
+.nav-link:focus {
     color: #f38181;
-    /* opacity: 1; */
+    transition: all 0.2s linear;
+}
+
+.site-logo:hover {
+    background-color: rgb(234, 240, 239);
+    transition: all 0.2s linear;
+}
+
+.site-logo:focus {
+    background-color: rgb(234, 240, 239);
+    transition: all 0.2s linear;
 }
 
 
@@ -89,17 +118,19 @@ img {
 /* Amazing Services */
 
 .main-content {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .services-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0px 0px 94px 0px;
-    padding: 0px;
-    font-size: 0px;
 }
 
 .title-slogan {
-    display: block;
     font-size: 24px;
     line-height: 1.2;
     font-family: 'Kaushan Script', sans-serif;
@@ -183,12 +214,12 @@ img {
 
 .title-item {
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     color: #333333;
-    margin: 0px 0px 16px 0px;
+    margin: 0px 0px 12px 0px;
     padding: 0px;
 }
 
@@ -206,16 +237,23 @@ img {
 /* Meet our team */
 
 .team-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 82px;
 }
 
 .text-item-team {
-    margin: 0px 120px 92px;
+    width: 954px;
+    text-align: center;
+    margin-bottom: 92px;
 }
 
 .team-items {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    width: 1200px;
     list-style: none;
     text-decoration: none;
     margin: 0px;
@@ -223,19 +261,36 @@ img {
 }
 
 .team-item {
-    flex: 0px 0px 380px;
     background-repeat: no-repeat;
+    background-image: url(../img/backgr1.png);
 }
 
-.team-item-graphic {
+.cart-item {
+    position: relative;
+    transition: all 0.2s linear;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 28px;
+}
+
+.team-item:hover .cart-item {
+    bottom: 10px;
+    right: 10px;
+}
+
+.team-item:hover .icon-socials {
+    opacity: 1;
+}
+
+.cart-item-graphic {
     background-image: url(../img/img1.png);
 }
 
-.team-item-branding {
+.cart-item-branding {
     background-image: url(../img/img2.png);
 }
 
-.team-item-developer {
+.cart-item-developer {
     background-image: url(../img/img3.png);
 }
 
@@ -245,9 +300,10 @@ img {
     align-items: center;
     width: 380px;
     height: 470px;
-    margin: 0px;
-    padding: 0px;
     opacity: 0;
+    background: linear-gradient(0deg, rgba(252, 227, 138, 0.9), rgba(243, 129, 129, 0.9));
+    transition: all 0.2s linear;
+    padding: 0px;
 }
 
 .team-link:not(:nth-of-type(4n)) {
@@ -256,7 +312,6 @@ img {
 
 .icon-link {
     display: block;
-    text-decoration: none;
     width: 56px;
     height: 56px;
     background-repeat: no-repeat;
@@ -266,6 +321,12 @@ img {
 .team-link {
     list-style: none;
     background-color: rgb(252, 227, 138);
+}
+
+.icon-link:hover,
+.icon-link:focus {
+    background-color: rgba(149, 225, 211, 1);
+    transition: all 0.2s linear;
 }
 
 .icon-facebook {
@@ -284,27 +345,9 @@ img {
     background-image: url(../img/instagram.png);
 }
 
-.team-item:hover .cart {
-    background: linear-gradient(0deg, rgba(252, 227, 138, 0.9), rgba(243, 129, 129, 0.9));
-    transform: translate(-10px, -10px);
-    box-shadow: 10px 10px rgb(149, 225, 211);
-}
-
-.icon-socials:hover {
-    opacity: 1;
-}
-
-.team-link:hover {
-    background-color: rgba(149, 225, 211, 1);
-}
-
-.cart {
-    margin-bottom: 28px;
-}
-
 .team-item-name {
     font-size: 14px;
-    line-height: 1.2;
+    line-height: 1;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
@@ -352,13 +395,15 @@ img {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     text-decoration: none;
-    color: #f38181;
+    color: #333333;
     margin: 0px;
     cursor: pointer;
 }
 
-.footer-link:hover {
+.footer-link:hover,
+.footer-link:focus {
     color: #f38181;
+    transition: all 0.2s linear;
 }
 
 .footer-field {
@@ -393,10 +438,15 @@ input::-webkit-input-placeholder {
     text-transform: uppercase;
     color: #ffffff;
     background: #95e1d3;
-    margin: 0px;
     padding: 12px 34px;
     border: none;
     cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+    color: rgb(234, 240, 239);
+    transition: all 0.2s linear;
 }
 
 .visually-hidden:not(:focus):not(:active),

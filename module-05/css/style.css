@@ -398,7 +398,7 @@ img {
     background: #1abc9c;
 }
 
-.item-products:hover .product-price,
+.item-products:focus .product-price,
 .item-products:hover .product-price {
     background: #7fd9c7;
 }
@@ -430,7 +430,6 @@ img {
     display: inline-block;
     margin-top: 32px;
     list-style: none;
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -440,6 +439,7 @@ img {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     color: #fefefe;
+    text-decoration: none;
 }
 
 .footer-item-link:hover,
