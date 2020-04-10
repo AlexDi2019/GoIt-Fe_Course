@@ -1,0 +1,19 @@
+{
+    "name": "goit-fe_course",
+    "version": "1.0.0",
+    "description": "npm basics",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AlexDi2019/GoIt-Fe_Course.git"
+    },
+    "author": "Alex_Di",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/AlexDi2019/GoIt-Fe_Course/issues"
+    },
+    "homepage": "https://github.com/AlexDi2019/GoIt-Fe_Course#readme"
+}
