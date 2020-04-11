@@ -15,5 +15,8 @@
     "bugs": {
         "url": "https://github.com/AlexDi2019/GoIt-Fe_Course/issues"
     },
-    "homepage": "https://github.com/AlexDi2019/GoIt-Fe_Course#readme"
+    "homepage": "https://github.com/AlexDi2019/GoIt-Fe_Course#readme",
+    "dependencies": {
+        "node-sass": "^4.13.1"
+    }
 }
