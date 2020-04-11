@@ -1,18 +1,16 @@
 {
-    "name": "goit-fe_course",
+    "name": "project-01",
     "version": "1.0.0",
     "description": "npm basics",
     "main": "index.js",
     "scripts": {
-        "scss:build": "node-sass src/scss/styles.scss -o src/css",
-        "scss:watch": "node-sass --watch src/scss/styles.scss -o src/css",
-        "build": "npm run scss:build && npm run scss:watch"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/AlexDi2019/GoIt-Fe_Course.git"
     },
-    "author": "Alex_Di",
+    "author": "AlexDi",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/AlexDi2019/GoIt-Fe_Course/issues"
